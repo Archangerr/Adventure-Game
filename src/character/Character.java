@@ -1,11 +1,11 @@
 package character;
 
-public abstract class character {
+public abstract class Character {
     private int dmg;
     private int hp;
     private int money;
 
-    public character(int dmg, int hp, int money) {
+    public Character(int dmg, int hp, int money) {
         this.dmg = dmg;
         this.hp = hp;
         this.money = money;

@@ -1,6 +1,6 @@
 package Player;
 
-public class inventory {
+public class Inventory {
     private boolean water;
     private boolean food;
     private boolean firewood;
@@ -9,7 +9,7 @@ public class inventory {
     private String armorName;
     private int armorValue;
 
-    public inventory() {
+    public Inventory() {
     }
 
     public int getArmorValue() {
