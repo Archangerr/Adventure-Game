@@ -2,7 +2,9 @@ package game;
 import java.util.*;
 import Player.Player;
 import location.Cave;
+import location.Forest;
 import location.Location;
+import location.River;
 
 public class Game {
     private Scanner input;
@@ -22,18 +24,30 @@ public class Game {
         System.out.println(player.getName()+ " welcome to the island");
         printChar();
         player.selectChar(input.nextInt());
-        System.out.println(player.getHp());
-        printLocation();
-        int k = input.nextInt();
-        switch (k){
-            case 1:
+        while(!isGameOver(player)) {
+            printLocation();
+            int k = input.nextInt();
+            switch (k) {
+                case 1:
 
-            case 2:
+                case 2:
 
-            case 3:
-                location=new Cave(player);
-                location.onLocation();
+                case 3:
+                    location = new Cave(player);
+                    location.onLocation();
+                case 4:
+                    location = new River(player);
+                    location.onLocation();
+                case 5:
+                    location = new Forest(player);
+                    location.onLocation();
+
+            }
         }
+    }
+
+    private boolean isGameOver(Player player){
+        return player.getInventory().isFirewood() && player.getInventory().isFood() && player.getInventory().isWater();
     }
 
 

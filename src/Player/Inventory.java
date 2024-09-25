@@ -1,13 +1,13 @@
 package Player;
 
 public class Inventory {
-    private boolean water;
-    private boolean food;
-    private boolean firewood;
+    private boolean water = false;
+    private boolean food = false;
+    private boolean firewood = false;
     private String weaponName;
-    private int weaponDamage;
+    private int weaponDamage =0;
     private String armorName;
-    private int armorValue;
+    private int armorValue=0;
 
     public Inventory() {
     }

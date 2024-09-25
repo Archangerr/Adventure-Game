@@ -10,6 +10,7 @@ public class Player {
     private int hp;
     private int money;
     private String name;
+    private int fullHp;
 
     public void selectChar(int k){
         Character attributes = null;
@@ -27,10 +28,13 @@ public class Player {
         this.dmg=  attributes.getDmg();
         this.hp=   attributes.getHp();
         this.money=attributes.getMoney();
+        this.fullHp=attributes.getHp();
     }
 
     public Player(String name) {
         this.name = name;
+        this.inventory= new Inventory();
+
     }
 
     public Inventory getInventory() {
@@ -51,5 +55,13 @@ public class Player {
 
     public String getName() {
         return name;
+    }
+
+    public void setHp(int hp) {
+        this.hp = hp;
+    }
+
+    public void setMoney(int money) {
+        this.money = money;
     }
 }
