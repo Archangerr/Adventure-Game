@@ -1,5 +1,10 @@
 package location;
 
-public abstract class NormalLocation  {
+import Player.Player;
 
+public abstract class NormalLocation extends Location  {
+
+    public NormalLocation(Player player, String name) {
+        super(player, name);
+    }
 }

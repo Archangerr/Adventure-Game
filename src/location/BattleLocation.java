@@ -38,29 +38,22 @@ public abstract class BattleLocation extends Location {
             if(obstacle.getHp()<=0){
                 noOfObstacle--;
                 System.out.println("You killed the monster there is "+ noOfObstacle + " amount of monster left.");
+                System.out.println("You earned "+ obstacle.getMoney() + " coins");
+                player.setMoney(obstacle.getMoney()+player.getMoney());
                 obstacle.setHp(ObstacleHp);
             }
             if(noOfObstacle==0){
                 break;
             }
-            try {
-                TimeUnit.SECONDS.sleep(1);
-            } catch (InterruptedException e) {
-                throw new RuntimeException(e);
-            }
+            this.wait1sec();
             healthStatus(player,obstacle);
             player.setHp(player.getHp()-obstacle.getDmg());
-            System.out.println(obstacle.getName() + " dealed " + obstacle.getDmg() + " dmg to " + player.getName());
+            System.out.println(obstacle.getName() + " dealt " + obstacle.getDmg() + " dmg to " + player.getName());
             if(player.getHp()<=0){
                 System.out.println("You DieD.");
                 exit(0);
             }
-            try {
-                TimeUnit.SECONDS.sleep(1);
-            } catch (InterruptedException e) {
-                throw new RuntimeException(e);
-            }
-
+            this.wait1sec();
         }
         System.out.println("Congrats You Have Cleared The " + this.getName());
         String award = getPrize();
@@ -78,7 +71,7 @@ public abstract class BattleLocation extends Location {
     @Override
     public void onLocation() {
         if(isCleared()){
-            System.out.println("You already Clared This Section");
+            System.out.println("You already Cleared This Section");
             return;
         }
 
@@ -95,7 +88,7 @@ public abstract class BattleLocation extends Location {
             case "flight":
                 break;
             default:
-                System.out.println("wrong state");
+                System.out.println("Wrong state");
                 break;
         }
 

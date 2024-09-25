@@ -1,10 +1,7 @@
 package game;
 import java.util.*;
 import Player.Player;
-import location.Cave;
-import location.Forest;
-import location.Location;
-import location.River;
+import location.*;
 
 public class Game {
     private Scanner input;
@@ -31,16 +28,21 @@ public class Game {
                 case 1:
 
                 case 2:
-
+                    location=new SafeHouse(player);
+                    location.onLocation();
+                    break;
                 case 3:
                     location = new Cave(player);
                     location.onLocation();
+                    break;
                 case 4:
                     location = new River(player);
                     location.onLocation();
+                    break;
                 case 5:
                     location = new Forest(player);
                     location.onLocation();
+                    break;
 
             }
         }

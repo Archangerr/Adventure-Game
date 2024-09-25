@@ -37,6 +37,10 @@ public class Player {
 
     }
 
+    public int getFullHp() {
+        return fullHp;
+    }
+
     public Inventory getInventory() {
         return inventory;
     }
