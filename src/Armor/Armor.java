@@ -3,10 +3,10 @@ package Armor;
 public class Armor {
     private int id;
     private int block;
-    private double money;
+    private int money;
     private String name;
 
-    public Armor(int id, int block, double money,String name) {
+    public Armor(int id, int block, int money,String name) {
         this.id = id;
         this.block = block;
         this.money = money;
@@ -29,11 +29,11 @@ public class Armor {
         this.block = block;
     }
 
-    public double getMoney() {
+    public int getMoney() {
         return money;
     }
 
-    public void setMoney(double money) {
+    public void setMoney(int money) {
         this.money = money;
     }
     public String getName() {

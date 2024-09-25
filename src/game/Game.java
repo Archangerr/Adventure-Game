@@ -26,7 +26,9 @@ public class Game {
             int k = input.nextInt();
             switch (k) {
                 case 1:
-
+                    location=new ToolStore(player);
+                    location.onLocation();
+                    break;
                 case 2:
                     location=new SafeHouse(player);
                     location.onLocation();
